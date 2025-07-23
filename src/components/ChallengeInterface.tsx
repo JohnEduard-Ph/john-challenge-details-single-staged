@@ -141,17 +141,17 @@ const ChallengeInterface = () => {
                 <Progress value={0} className="h-2" />
               </div>
               
-              <div className="flex space-x-4 mt-6">
+              <div className="space-y-3 mt-6">
                 <Button 
                   variant="outline" 
-                  className="flex-1 border-border text-foreground"
+                  className="w-full border-border text-foreground"
                   onClick={() => setShowRewardModal(true)}
                 >
                   Request for Reward Contribution
                 </Button>
                 <Button 
                   variant="outline" 
-                  className="flex-1 border-border text-foreground relative"
+                  className="w-full border-border text-foreground relative"
                   onClick={() => setShowRoleModal(true)}
                 >
                   Received Invitations for a Special Role
