@@ -65,7 +65,8 @@ const ChallengeInterface = () => {
     <Button
       variant={isActive ? "default" : "outline"}
       onClick={onClick}
-      className={`rounded-full px-6 py-2 ${
+      size="sm"
+      className={`rounded-full px-3 py-1 text-xs flex-1 ${
         isActive 
           ? "bg-primary text-primary-foreground" 
           : "bg-white text-foreground border-border hover:bg-muted"
@@ -416,7 +417,7 @@ const ChallengeInterface = () => {
         </div>
         
         {/* Tabs */}
-        <div className="flex space-x-2 px-4 pb-4 overflow-x-auto">
+        <div className="flex space-x-1 px-4 pb-4 justify-between">
           {["Details", "Status", "Participate", "Messages"].map((tab) => (
             <TabButton
               key={tab}
