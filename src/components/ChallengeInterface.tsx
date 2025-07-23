@@ -54,6 +54,11 @@ const ChallengeInterface = () => {
     { id: "3", name: "John Eduard", avatar: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=100&h=100&fit=crop&crop=face", points: 0, games: 0, rank: 3 },
     { id: "4", name: "Juliana Arla", avatar: "https://images.unsplash.com/photo-1494790108755-2616b612b47c?w=100&h=100&fit=crop&crop=face", points: 0, games: 0, rank: 4 },
     { id: "5", name: "Alyssa Claire", avatar: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100&h=100&fit=crop&crop=face", points: 0, games: 0, rank: 5 },
+    { id: "6", name: "Net-roc Dev2", avatar: "https://images.unsplash.com/photo-1519244703995-f4e0f30006d5?w=100&h=100&fit=crop&crop=face", points: 0, games: 0, rank: 6 },
+    { id: "7", name: "Net-roc Dev3", avatar: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=100&h=100&fit=crop&crop=face", points: 0, games: 0, rank: 7 },
+    { id: "8", name: "Net-roc Dev4", avatar: "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?w=100&h=100&fit=crop&crop=face", points: 0, games: 0, rank: 8 },
+    { id: "9", name: "Net-roc Dev5", avatar: "https://images.unsplash.com/photo-1566492031773-4f4e44671d66?w=100&h=100&fit=crop&crop=face", points: 0, games: 0, rank: 9 },
+    { id: "10", name: "Net-roc Dev6", avatar: "https://images.unsplash.com/photo-1463453091185-61582044d556?w=100&h=100&fit=crop&crop=face", points: 0, games: 0, rank: 10 },
   ];
 
   const messages: Message[] = [
