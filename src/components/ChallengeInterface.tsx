@@ -522,8 +522,8 @@ const ChallengeInterface = () => {
               
             </div>
             
-            <div className="bg-muted rounded-lg p-4 flex items-center justify-between">
-              <div className="flex items-center space-x-3">
+            <div className="bg-muted rounded-lg p-4">
+              <div className="flex items-center space-x-3 mb-4">
                 <span className="text-sm text-muted-foreground">3min</span>
                 <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=40&h=40&fit=crop&crop=face" alt="James Liu" className="w-10 h-10 rounded-full" />
                 <span>James Liu invited you to be a Verifier!</span>
