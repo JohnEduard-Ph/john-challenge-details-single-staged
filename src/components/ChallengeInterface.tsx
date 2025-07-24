@@ -280,8 +280,11 @@ const ChallengeInterface = () => {
                 </div>
                 
                 <div className="flex space-x-4">
-                  <div className="w-20 h-20 bg-gray-200 rounded-lg flex items-center justify-center">
-                    <img src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=80&h=80&fit=crop" alt="Tree planting" className="w-full h-full object-cover rounded-lg" />
+                  <div className="flex flex-col">
+                    <div className="w-20 h-20 bg-gray-200 rounded-lg flex items-center justify-center">
+                      <img src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=80&h=80&fit=crop" alt="Tree planting" className="w-full h-full object-cover rounded-lg" />
+                    </div>
+                    <div className="text-xs text-muted-foreground mt-1">tree_sapling_01.jpg</div>
                   </div>
                   <div className="w-20 h-20 bg-gray-200 rounded-lg flex items-center justify-center">
                     <Camera className="w-8 h-8 text-gray-400" />
@@ -321,11 +324,17 @@ const ChallengeInterface = () => {
                 </div>
                 
                 <div className="flex space-x-4">
-                  <div className="w-20 h-20 bg-gray-200 rounded-lg overflow-hidden">
-                    <img src="https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=80&h=80&fit=crop" alt="Planted tree" className="w-full h-full object-cover" />
+                  <div className="flex flex-col">
+                    <div className="w-20 h-20 bg-gray-200 rounded-lg overflow-hidden">
+                      <img src="https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=80&h=80&fit=crop" alt="Planted tree" className="w-full h-full object-cover" />
+                    </div>
+                    <div className="text-xs text-muted-foreground mt-1">oak_tree_planted.jpg</div>
                   </div>
-                  <div className="w-20 h-20 bg-gray-200 rounded-lg overflow-hidden">
-                    <img src="https://images.unsplash.com/photo-1574263867128-a3d5c1b1deae?w=80&h=80&fit=crop" alt="Tree growth" className="w-full h-full object-cover" />
+                  <div className="flex flex-col">
+                    <div className="w-20 h-20 bg-gray-200 rounded-lg overflow-hidden">
+                      <img src="https://images.unsplash.com/photo-1574263867128-a3d5c1b1deae?w=80&h=80&fit=crop" alt="Tree growth" className="w-full h-full object-cover" />
+                    </div>
+                    <div className="text-xs text-muted-foreground mt-1">tree_growth_progress.jpg</div>
                   </div>
                 </div>
               </div>
@@ -404,6 +413,7 @@ const ChallengeInterface = () => {
           {/* Hero Image */}
           <div className="relative mb-4">
             <img src={challengeHero} alt="Challenge Hero" className="w-full h-48 object-cover rounded-2xl" />
+            <div className="text-xs text-muted-foreground mt-1">challenge_hero_2024.jpg</div>
           </div>
           
           {/* Challenge Info */}
