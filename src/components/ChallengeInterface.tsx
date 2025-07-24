@@ -296,7 +296,7 @@ const ChallengeInterface = () => {
                     <div className="w-3 h-3 rounded-full border-2 border-muted bg-white"></div>
                     <span>Plant 10 trees.</span>
                   </div>
-                  <Button variant="outline" size="sm" className="border-muted text-muted-foreground">
+                  <Button variant="outline" size="sm" className="border-muted text-muted-foreground" disabled>
                     Submit
                   </Button>
                 </div>
