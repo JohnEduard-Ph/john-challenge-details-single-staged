@@ -286,7 +286,9 @@ const ChallengeInterface = () => {
                     </div>
                     <div className="text-xs text-muted-foreground mt-1">tree_sapling_01.jpg</div>
                   </div>
-                  
+                  <div className="w-20 h-20 bg-gray-200 rounded-lg flex items-center justify-center">
+                    <Camera className="w-8 h-8 text-gray-400" />
+                  </div>
                   <div className="w-20 h-20 bg-gray-200 rounded-lg flex items-center justify-center">
                     <Plus className="w-8 h-8 text-gray-400" />
                   </div>
