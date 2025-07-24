@@ -283,9 +283,7 @@ const ChallengeInterface = () => {
                   <div className="w-20 h-20 bg-gray-200 rounded-lg flex items-center justify-center">
                     <img src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=80&h=80&fit=crop" alt="Tree planting" className="w-full h-full object-cover rounded-lg" />
                   </div>
-                  <div className="w-20 h-20 bg-gray-200 rounded-lg flex items-center justify-center">
-                    <Camera className="w-8 h-8 text-gray-400" />
-                  </div>
+                  
                   <div className="w-20 h-20 bg-gray-200 rounded-lg flex items-center justify-center">
                     <Plus className="w-8 h-8 text-gray-400" />
                   </div>
