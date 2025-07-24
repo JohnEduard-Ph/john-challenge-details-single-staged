@@ -239,7 +239,7 @@ const ChallengeInterface = () => {
               </div>
               
               <div className="flex space-x-4">
-                <Button variant="default" className="bg-primary text-primary-foreground">
+                <Button variant="default" className="bg-primary text-primary-foreground" onClick={() => setShowInviteModal(true)}>
                   Invite
                 </Button>
                 <Button variant="outline" onClick={() => setShowQRModal(true)}>
@@ -359,7 +359,7 @@ const ChallengeInterface = () => {
                   </div>)}
               </div>
               
-              <Button variant="outline" className="w-full mb-6" onClick={() => setShowInviteModal(true)}>
+              <Button variant="outline" className="w-full mb-6">
                 See All Friends
               </Button>
               
