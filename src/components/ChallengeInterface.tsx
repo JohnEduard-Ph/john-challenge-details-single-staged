@@ -546,9 +546,7 @@ const ChallengeInterface = () => {
           <div className="p-6">
             <div className="flex justify-between items-center mb-6">
               <h2 className="text-xl font-bold">Invite Friends</h2>
-              <Button variant="ghost" size="sm" onClick={() => setShowInviteModal(false)}>
-                <X className="w-4 h-4" />
-              </Button>
+              
             </div>
             
             <div className="space-y-4 mb-6">
