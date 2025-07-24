@@ -8,7 +8,6 @@ import { Textarea } from "@/components/ui/textarea";
 import { Checkbox } from "@/components/ui/checkbox";
 import { Heart, Star, Plus, X, QrCode, Camera } from "lucide-react";
 import challengeHero from "@/assets/challenge-hero.jpg";
-
 interface Friend {
   id: string;
   name: string;
@@ -16,7 +15,6 @@ interface Friend {
   points: number;
   status: "Active" | "Offline";
 }
-
 interface Participant {
   id: string;
   name: string;
@@ -25,7 +23,6 @@ interface Participant {
   games: number;
   rank: number;
 }
-
 interface Message {
   id: string;
   sender: string;
@@ -34,58 +31,132 @@ interface Message {
   time: string;
   type: "message" | "nudge";
 }
-
 const ChallengeInterface = () => {
   const [activeTab, setActiveTab] = useState("Details");
   const [showRewardModal, setShowRewardModal] = useState(false);
   const [showInviteModal, setShowInviteModal] = useState(false);
   const [showQRModal, setShowQRModal] = useState(false);
   const [showRoleModal, setShowRoleModal] = useState(false);
-
-  const friends: Friend[] = [
-    { id: "1", name: "Juliana Arla", avatar: "https://images.unsplash.com/photo-1494790108755-2616b612b47c?w=100&h=100&fit=crop&crop=face", points: 399000, status: "Active" },
-    { id: "2", name: "Alyssa Claire", avatar: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100&h=100&fit=crop&crop=face", points: 272000, status: "Active" },
-    { id: "3", name: "James Liu", avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop&crop=face", points: 678000, status: "Active" },
-  ];
-
-  const participants: Participant[] = [
-    { id: "1", name: "Net-roc Dev1", avatar: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=100&h=100&fit=crop&crop=face", points: 3000, games: 0, rank: 1 },
-    { id: "2", name: "Net-roc Dev7", avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop&crop=face", points: 0, games: 0, rank: 2 },
-    { id: "3", name: "John Eduard", avatar: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=100&h=100&fit=crop&crop=face", points: 0, games: 0, rank: 3 },
-    { id: "4", name: "Juliana Arla", avatar: "https://images.unsplash.com/photo-1494790108755-2616b612b47c?w=100&h=100&fit=crop&crop=face", points: 0, games: 0, rank: 4 },
-    { id: "5", name: "Alyssa Claire", avatar: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100&h=100&fit=crop&crop=face", points: 0, games: 0, rank: 5 },
-    { id: "6", name: "Net-roc Dev2", avatar: "https://images.unsplash.com/photo-1519244703995-f4e0f30006d5?w=100&h=100&fit=crop&crop=face", points: 0, games: 0, rank: 6 },
-    { id: "7", name: "Net-roc Dev3", avatar: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=100&h=100&fit=crop&crop=face", points: 0, games: 0, rank: 7 },
-    { id: "8", name: "Net-roc Dev4", avatar: "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?w=100&h=100&fit=crop&crop=face", points: 0, games: 0, rank: 8 },
-    { id: "9", name: "Net-roc Dev5", avatar: "https://images.unsplash.com/photo-1566492031773-4f4e44671d66?w=100&h=100&fit=crop&crop=face", points: 0, games: 0, rank: 9 },
-    { id: "10", name: "Net-roc Dev6", avatar: "https://images.unsplash.com/photo-1463453091185-61582044d556?w=100&h=100&fit=crop&crop=face", points: 0, games: 0, rank: 10 },
-  ];
-
-  const messages: Message[] = [
-    { id: "1", sender: "John Eduard", avatar: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=100&h=100&fit=crop&crop=face", message: "Hey! What's the status of your stage?", time: "Now", type: "message" },
-    { id: "2", sender: "Sponge Bob", avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop&crop=face", message: "Sponge Bob Nudged You! Nudge back?", time: "2hrs", type: "nudge" },
-  ];
-
-  const TabButton = ({ label, isActive, onClick }: { label: string; isActive: boolean; onClick: () => void }) => (
-    <Button
-      variant={isActive ? "default" : "outline"}
-      onClick={onClick}
-      size="sm"
-      className={`rounded-full px-3 py-1 text-xs flex-1 ${
-        isActive 
-          ? "bg-primary text-primary-foreground" 
-          : "bg-white text-foreground border-border hover:bg-muted"
-      }`}
-    >
+  const friends: Friend[] = [{
+    id: "1",
+    name: "Juliana Arla",
+    avatar: "https://images.unsplash.com/photo-1494790108755-2616b612b47c?w=100&h=100&fit=crop&crop=face",
+    points: 399000,
+    status: "Active"
+  }, {
+    id: "2",
+    name: "Alyssa Claire",
+    avatar: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100&h=100&fit=crop&crop=face",
+    points: 272000,
+    status: "Active"
+  }, {
+    id: "3",
+    name: "James Liu",
+    avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop&crop=face",
+    points: 678000,
+    status: "Active"
+  }];
+  const participants: Participant[] = [{
+    id: "1",
+    name: "Net-roc Dev1",
+    avatar: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=100&h=100&fit=crop&crop=face",
+    points: 3000,
+    games: 0,
+    rank: 1
+  }, {
+    id: "2",
+    name: "Net-roc Dev7",
+    avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop&crop=face",
+    points: 0,
+    games: 0,
+    rank: 2
+  }, {
+    id: "3",
+    name: "John Eduard",
+    avatar: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=100&h=100&fit=crop&crop=face",
+    points: 0,
+    games: 0,
+    rank: 3
+  }, {
+    id: "4",
+    name: "Juliana Arla",
+    avatar: "https://images.unsplash.com/photo-1494790108755-2616b612b47c?w=100&h=100&fit=crop&crop=face",
+    points: 0,
+    games: 0,
+    rank: 4
+  }, {
+    id: "5",
+    name: "Alyssa Claire",
+    avatar: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100&h=100&fit=crop&crop=face",
+    points: 0,
+    games: 0,
+    rank: 5
+  }, {
+    id: "6",
+    name: "Net-roc Dev2",
+    avatar: "https://images.unsplash.com/photo-1519244703995-f4e0f30006d5?w=100&h=100&fit=crop&crop=face",
+    points: 0,
+    games: 0,
+    rank: 6
+  }, {
+    id: "7",
+    name: "Net-roc Dev3",
+    avatar: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=100&h=100&fit=crop&crop=face",
+    points: 0,
+    games: 0,
+    rank: 7
+  }, {
+    id: "8",
+    name: "Net-roc Dev4",
+    avatar: "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?w=100&h=100&fit=crop&crop=face",
+    points: 0,
+    games: 0,
+    rank: 8
+  }, {
+    id: "9",
+    name: "Net-roc Dev5",
+    avatar: "https://images.unsplash.com/photo-1566492031773-4f4e44671d66?w=100&h=100&fit=crop&crop=face",
+    points: 0,
+    games: 0,
+    rank: 9
+  }, {
+    id: "10",
+    name: "Net-roc Dev6",
+    avatar: "https://images.unsplash.com/photo-1463453091185-61582044d556?w=100&h=100&fit=crop&crop=face",
+    points: 0,
+    games: 0,
+    rank: 10
+  }];
+  const messages: Message[] = [{
+    id: "1",
+    sender: "John Eduard",
+    avatar: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=100&h=100&fit=crop&crop=face",
+    message: "Hey! What's the status of your stage?",
+    time: "Now",
+    type: "message"
+  }, {
+    id: "2",
+    sender: "Sponge Bob",
+    avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop&crop=face",
+    message: "Sponge Bob Nudged You! Nudge back?",
+    time: "2hrs",
+    type: "nudge"
+  }];
+  const TabButton = ({
+    label,
+    isActive,
+    onClick
+  }: {
+    label: string;
+    isActive: boolean;
+    onClick: () => void;
+  }) => <Button variant={isActive ? "default" : "outline"} onClick={onClick} size="sm" className={`rounded-full px-3 py-1 text-xs flex-1 ${isActive ? "bg-primary text-primary-foreground" : "bg-white text-foreground border-border hover:bg-muted"}`}>
       {label}
-    </Button>
-  );
-
+    </Button>;
   const renderContent = () => {
     switch (activeTab) {
       case "Details":
-        return (
-          <div className="space-y-6">
+        return <div className="space-y-6">
             <div className="bg-white rounded-2xl p-6 border border-border">
               <div className="flex items-center space-x-2 mb-4">
                 <div className="w-8 h-8 bg-success rounded flex items-center justify-center">
@@ -147,37 +218,24 @@ const ChallengeInterface = () => {
               </div>
               
               <div className="space-y-3 mt-6">
-                <Button 
-                  variant="outline" 
-                  className="w-full border-border text-foreground"
-                  onClick={() => setShowRewardModal(true)}
-                >
+                <Button variant="outline" className="w-full border-border text-foreground" onClick={() => setShowRewardModal(true)}>
                   Request for Reward Contribution
                 </Button>
-                <Button 
-                  variant="outline" 
-                  className="w-full border-border text-foreground relative"
-                  onClick={() => setShowRoleModal(true)}
-                >
+                <Button variant="outline" className="w-full border-border text-foreground relative" onClick={() => setShowRoleModal(true)}>
                   Received Invitations for a Special Role
                   <div className="absolute -top-2 -right-2 w-4 h-4 bg-primary rounded-full"></div>
                 </Button>
               </div>
             </div>
-          </div>
-        );
-
+          </div>;
       case "Status":
-        return (
-          <div className="space-y-6">
+        return <div className="space-y-6">
             <div className="bg-white rounded-2xl p-6 border border-border">
               <div className="grid grid-cols-2 gap-4 mb-6">
-                {["Alyssa Claire", "Juliana Arla", "John Eduard", "Netroc Dev1", "Netroc Dev2", "Netroc Dev3", "Netroc Dev4", "Netroc Dev5", "Netroc Dev6", "Netroc Dev7"].map((name, index) => (
-                  <div key={index} className="flex items-center space-x-2">
+                {["Alyssa Claire", "Juliana Arla", "John Eduard", "Netroc Dev1", "Netroc Dev2", "Netroc Dev3", "Netroc Dev4", "Netroc Dev5", "Netroc Dev6", "Netroc Dev7"].map((name, index) => <div key={index} className="flex items-center space-x-2">
                     <div className="w-2 h-2 bg-primary rounded-full"></div>
                     <span className="text-sm">{name}</span>
-                  </div>
-                ))}
+                  </div>)}
               </div>
               
               <div className="flex space-x-4">
@@ -192,37 +250,23 @@ const ChallengeInterface = () => {
               <div className="mt-6">
                 <h3 className="text-xl font-bold text-center mb-4">Leaderboard</h3>
                 <div className="space-y-2">
-                  {participants.map((participant, index) => (
-                    <div
-                      key={participant.id}
-                      className={`flex items-center justify-between p-3 rounded-lg ${
-                        index === 0 ? "bg-primary text-primary-foreground" : "bg-muted"
-                      }`}
-                    >
+                  {participants.map((participant, index) => <div key={participant.id} className={`flex items-center justify-between p-3 rounded-lg ${index === 0 ? "bg-primary text-primary-foreground" : "bg-muted"}`}>
                       <div className="flex items-center space-x-3">
                         <span className="font-bold text-lg">{participant.rank}</span>
-                        <img
-                          src={participant.avatar}
-                          alt={participant.name}
-                          className="w-8 h-8 rounded-full"
-                        />
+                        <img src={participant.avatar} alt={participant.name} className="w-8 h-8 rounded-full" />
                         <span className="font-medium">{participant.name}</span>
                       </div>
                       <div className="flex items-center space-x-2">
                         <Star className="w-4 h-4 text-points fill-current" />
                         <span>{participant.points.toLocaleString()} Points</span>
                       </div>
-                    </div>
-                  ))}
+                    </div>)}
                 </div>
               </div>
             </div>
-          </div>
-        );
-
+          </div>;
       case "Participate":
-        return (
-          <div className="space-y-6">
+        return <div className="space-y-6">
             <div className="bg-white rounded-2xl p-6 border border-border">
               <div className="space-y-6">
                 <div className="flex items-center justify-between">
@@ -286,23 +330,15 @@ const ChallengeInterface = () => {
                 </div>
               </div>
             </div>
-          </div>
-        );
-
+          </div>;
       case "Messages":
-        return (
-          <div className="space-y-6">
+        return <div className="space-y-6">
             <div className="bg-white rounded-2xl p-6 border border-border">
               <h3 className="text-lg font-semibold mb-4">Friends:</h3>
               <div className="space-y-4 mb-6">
-                {friends.map((friend) => (
-                  <div key={friend.id} className="flex items-center justify-between">
+                {friends.map(friend => <div key={friend.id} className="flex items-center justify-between">
                     <div className="flex items-center space-x-3">
-                      <img
-                        src={friend.avatar}
-                        alt={friend.name}
-                        className="w-12 h-12 rounded-full"
-                      />
+                      <img src={friend.avatar} alt={friend.name} className="w-12 h-12 rounded-full" />
                       <div>
                         <div className="font-semibold">{friend.name}</div>
                         <div className="text-sm text-muted-foreground">Status: {friend.status}</div>
@@ -320,8 +356,7 @@ const ChallengeInterface = () => {
                         Nudge
                       </Button>
                     </div>
-                  </div>
-                ))}
+                  </div>)}
               </div>
               
               <Button variant="outline" className="w-full mb-6" onClick={() => setShowInviteModal(true)}>
@@ -332,14 +367,9 @@ const ChallengeInterface = () => {
               
               <h3 className="text-lg font-semibold mb-4">Received:</h3>
               <div className="space-y-4">
-                {messages.map((message) => (
-                  <div key={message.id} className="flex items-start justify-between">
+                {messages.map(message => <div key={message.id} className="flex items-start justify-between">
                     <div className="flex items-start space-x-3">
-                      <img
-                        src={message.avatar}
-                        alt={message.sender}
-                        className="w-12 h-12 rounded-full"
-                      />
+                      <img src={message.avatar} alt={message.sender} className="w-12 h-12 rounded-full" />
                       <div>
                         <div className="flex items-center space-x-2 mb-1">
                           <span className="font-semibold">{message.sender}</span>
@@ -354,27 +384,18 @@ const ChallengeInterface = () => {
                         <div className="text-sm">{message.message}</div>
                       </div>
                     </div>
-                    <Button 
-                      variant={message.type === "nudge" ? "default" : "default"} 
-                      size="sm" 
-                      className="bg-primary text-primary-foreground"
-                    >
+                    <Button variant={message.type === "nudge" ? "default" : "default"} size="sm" className="bg-primary text-primary-foreground">
                       {message.type === "nudge" ? "Nudge Back" : "Reply"}
                     </Button>
-                  </div>
-                ))}
+                  </div>)}
               </div>
             </div>
-          </div>
-        );
-
+          </div>;
       default:
         return null;
     }
   };
-
-  return (
-    <div className="max-w-md mx-auto bg-background min-h-screen">
+  return <div className="max-w-md mx-auto bg-background min-h-screen">
       {/* Header */}
       <div className="bg-white border-b border-border">
         <div className="p-4">
@@ -382,11 +403,7 @@ const ChallengeInterface = () => {
           
           {/* Hero Image */}
           <div className="relative mb-4">
-            <img
-              src={challengeHero}
-              alt="Challenge Hero"
-              className="w-full h-48 object-cover rounded-2xl"
-            />
+            <img src={challengeHero} alt="Challenge Hero" className="w-full h-48 object-cover rounded-2xl" />
           </div>
           
           {/* Challenge Info */}
@@ -423,14 +440,7 @@ const ChallengeInterface = () => {
         
         {/* Tabs */}
         <div className="flex space-x-1 px-4 pb-4 justify-between">
-          {["Details", "Status", "Participate", "Messages"].map((tab) => (
-            <TabButton
-              key={tab}
-              label={tab}
-              isActive={activeTab === tab}
-              onClick={() => setActiveTab(tab)}
-            />
-          ))}
+          {["Details", "Status", "Participate", "Messages"].map(tab => <TabButton key={tab} label={tab} isActive={activeTab === tab} onClick={() => setActiveTab(tab)} />)}
         </div>
       </div>
 
@@ -445,25 +455,33 @@ const ChallengeInterface = () => {
           <div className="p-6">
             <div className="flex justify-between items-center mb-6">
               <h2 className="text-xl font-bold">Request for Reward Contribution</h2>
-              <Button variant="ghost" size="sm" onClick={() => setShowRewardModal(false)}>
-                <X className="w-4 h-4" />
-              </Button>
+              
             </div>
             
             <div className="space-y-4 mb-6">
-              {[
-                { name: "Juliana Arla", points: "399,000 Points", status: "Active", checked: true },
-                { name: "Alyssa Claire", points: "272,000 Points", status: "Active", checked: false },
-                { name: "John Eduard", points: "5 Points", status: "Active", checked: true },
-                { name: "Sponge Bob Square Pants", points: "123,458 Points", status: "Offline", checked: false },
-              ].map((person, index) => (
-                <div key={index} className="flex items-center space-x-3">
+              {[{
+              name: "Juliana Arla",
+              points: "399,000 Points",
+              status: "Active",
+              checked: true
+            }, {
+              name: "Alyssa Claire",
+              points: "272,000 Points",
+              status: "Active",
+              checked: false
+            }, {
+              name: "John Eduard",
+              points: "5 Points",
+              status: "Active",
+              checked: true
+            }, {
+              name: "Sponge Bob Square Pants",
+              points: "123,458 Points",
+              status: "Offline",
+              checked: false
+            }].map((person, index) => <div key={index} className="flex items-center space-x-3">
                   <Checkbox checked={person.checked} />
-                  <img
-                    src={`https://images.unsplash.com/photo-${1500648767791 + index}?w=40&h=40&fit=crop&crop=face`}
-                    alt={person.name}
-                    className="w-10 h-10 rounded-full"
-                  />
+                  <img src={`https://images.unsplash.com/photo-${1500648767791 + index}?w=40&h=40&fit=crop&crop=face`} alt={person.name} className="w-10 h-10 rounded-full" />
                   <div className="flex-1">
                     <div className="font-semibold">{person.name}</div>
                     <div className="flex items-center space-x-1">
@@ -474,8 +492,7 @@ const ChallengeInterface = () => {
                   <div className="text-sm">
                     Status: <span className={person.status === "Active" ? "text-success" : "text-destructive"}>{person.status}</span>
                   </div>
-                </div>
-              ))}
+                </div>)}
             </div>
             
             <div className="bg-muted rounded-lg p-4 mb-6">
@@ -510,11 +527,7 @@ const ChallengeInterface = () => {
             <div className="bg-muted rounded-lg p-4 flex items-center justify-between">
               <div className="flex items-center space-x-3">
                 <span className="text-sm text-muted-foreground">3min</span>
-                <img
-                  src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=40&h=40&fit=crop&crop=face"
-                  alt="James Liu"
-                  className="w-10 h-10 rounded-full"
-                />
+                <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=40&h=40&fit=crop&crop=face" alt="James Liu" className="w-10 h-10 rounded-full" />
                 <span>James Liu invited you to be a Verifier!</span>
               </div>
               <div className="flex space-x-2">
@@ -541,19 +554,29 @@ const ChallengeInterface = () => {
             </div>
             
             <div className="space-y-4 mb-6">
-              {[
-                { name: "Abi Falon", points: "299,000 Points", status: "Active", checked: false },
-                { name: "Jane Doe", points: "10,000 Points", status: "Active", checked: false },
-                { name: "James Sanchez", points: "203 Points", status: "Active", checked: false },
-                { name: "Dalton Pass", points: "34,203 Points", status: "Offline", checked: true },
-              ].map((person, index) => (
-                <div key={index} className="flex items-center space-x-3">
+              {[{
+              name: "Abi Falon",
+              points: "299,000 Points",
+              status: "Active",
+              checked: false
+            }, {
+              name: "Jane Doe",
+              points: "10,000 Points",
+              status: "Active",
+              checked: false
+            }, {
+              name: "James Sanchez",
+              points: "203 Points",
+              status: "Active",
+              checked: false
+            }, {
+              name: "Dalton Pass",
+              points: "34,203 Points",
+              status: "Offline",
+              checked: true
+            }].map((person, index) => <div key={index} className="flex items-center space-x-3">
                   <Checkbox checked={person.checked} />
-                  <img
-                    src={`https://images.unsplash.com/photo-${1494790108755 + index}?w=40&h=40&fit=crop&crop=face`}
-                    alt={person.name}
-                    className="w-10 h-10 rounded-full"
-                  />
+                  <img src={`https://images.unsplash.com/photo-${1494790108755 + index}?w=40&h=40&fit=crop&crop=face`} alt={person.name} className="w-10 h-10 rounded-full" />
                   <div className="flex-1">
                     <div className="font-semibold">{person.name}</div>
                     <div className="flex items-center space-x-1">
@@ -564,8 +587,7 @@ const ChallengeInterface = () => {
                   <div className="text-sm">
                     Status: <span className={person.status === "Active" ? "text-success" : "text-destructive"}>{person.status}</span>
                   </div>
-                </div>
-              ))}
+                </div>)}
             </div>
             
             <Button className="w-full bg-primary text-primary-foreground">
@@ -595,8 +617,6 @@ const ChallengeInterface = () => {
           </div>
         </DialogContent>
       </Dialog>
-    </div>
-  );
+    </div>;
 };
-
 export default ChallengeInterface;
