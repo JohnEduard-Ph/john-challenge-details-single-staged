@@ -208,7 +208,7 @@ const ChallengeInterface = () => {
                   <div className="flex items-center space-x-2">
                     <Star className="w-4 h-4 text-points fill-current" />
                     <span className="text-points font-semibold">1,000 Points</span>
-                    <Button variant="outline" size="sm" className="border-muted text-muted-foreground">
+                    <Button variant="outline" size="sm" className="border-muted text-muted-foreground" disabled>
                       Claim Reward
                     </Button>
                   </div>
