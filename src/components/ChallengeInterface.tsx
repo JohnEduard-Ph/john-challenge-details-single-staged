@@ -598,9 +598,7 @@ const ChallengeInterface = () => {
           <div className="p-6 text-center">
             <div className="flex justify-between items-center mb-6">
               <h2 className="text-xl font-bold">QR Code</h2>
-              <Button variant="ghost" size="sm" onClick={() => setShowQRModal(false)}>
-                <X className="w-4 h-4" />
-              </Button>
+              
             </div>
             
             <div className="bg-muted rounded-lg p-8 mb-6 flex items-center justify-center">
