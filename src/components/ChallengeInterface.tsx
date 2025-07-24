@@ -519,9 +519,7 @@ const ChallengeInterface = () => {
           <div className="p-6">
             <div className="flex justify-between items-center mb-6">
               <h2 className="text-xl font-bold">Received Invitations for a Special Role</h2>
-              <Button variant="ghost" size="sm" onClick={() => setShowRoleModal(false)}>
-                <X className="w-4 h-4" />
-              </Button>
+              
             </div>
             
             <div className="bg-muted rounded-lg p-4 flex items-center justify-between">
