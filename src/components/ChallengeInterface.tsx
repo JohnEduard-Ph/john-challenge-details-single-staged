@@ -315,7 +315,7 @@ const ChallengeInterface = () => {
                     </div>
                     <span className="text-sm text-muted-foreground">January 10, 2025</span>
                   </div>
-                  <Button variant="outline" size="sm" className="border-muted text-muted-foreground">
+                  <Button variant="outline" size="sm" className="border-muted text-muted-foreground" disabled>
                     Done
                   </Button>
                 </div>
