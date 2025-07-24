@@ -411,7 +411,7 @@ const ChallengeInterface = () => {
           {/* Hero Image */}
           <div className="relative mb-4">
             <img src={challengeHero} alt="Challenge Hero" className="w-full h-48 object-cover rounded-2xl" />
-            <div className="text-xs text-muted-foreground mt-1">challenge_hero_2024.jpg</div>
+            
           </div>
           
           {/* Challenge Info */}
