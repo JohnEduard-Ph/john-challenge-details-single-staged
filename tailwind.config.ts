@@ -73,6 +73,10 @@ export default {
 				points: {
 					DEFAULT: 'hsl(var(--points))',
 					foreground: 'hsl(var(--points-foreground))'
+				},
+				special: {
+					DEFAULT: 'hsl(var(--special))',
+					foreground: 'hsl(var(--special-foreground))'
 				}
 			},
 			borderRadius: {

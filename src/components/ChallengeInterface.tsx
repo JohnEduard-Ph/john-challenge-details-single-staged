@@ -218,10 +218,10 @@ const ChallengeInterface = () => {
               </div>
               
               <div className="space-y-3 mt-6">
-                <Button variant="outline" className="w-full border-border text-foreground" onClick={() => setShowRewardModal(true)}>
+                <Button variant="outline" className="w-full border-border text-foreground hover:bg-special hover:text-special-foreground" onClick={() => setShowRewardModal(true)}>
                   Request for Reward Contribution
                 </Button>
-                <Button variant="outline" className="w-full border-border text-foreground relative" onClick={() => setShowRoleModal(true)}>
+                <Button variant="outline" className="w-full border-border text-foreground hover:bg-special hover:text-special-foreground relative" onClick={() => setShowRoleModal(true)}>
                   Received Invitations for a Special Role
                   <div className="absolute -top-2 -right-2 w-4 h-4 bg-primary rounded-full"></div>
                 </Button>

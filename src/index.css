@@ -45,6 +45,9 @@ All colors MUST be HSL.
     --points: 48 100% 50%;
     --points-foreground: 0 0% 0%;
 
+    --special: 346 67% 38%;
+    --special-foreground: 0 0% 100%;
+
     --radius: 0.5rem;
 
     --sidebar-background: 0 0% 98%;
