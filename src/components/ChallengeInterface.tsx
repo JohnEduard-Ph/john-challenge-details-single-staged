@@ -368,7 +368,7 @@ const ChallengeInterface = () => {
                   </div>)}
               </div>
               
-              <Button variant="outline" className="w-full mb-6">
+              <Button variant="outline" className="w-full mb-6 hover:bg-[#A42138] hover:text-white">
                 See All Friends
               </Button>
               
