@@ -308,6 +308,8 @@ const ChallengeInterface = () => {
                   <Plus className="w-8 h-8 text-gray-400" />
                 </div>
                 
+                <hr className="border-primary border-2" />
+                
                 <div className="flex items-center justify-between">
                   <div>
                     <div className="flex items-center space-x-3 mb-1">
