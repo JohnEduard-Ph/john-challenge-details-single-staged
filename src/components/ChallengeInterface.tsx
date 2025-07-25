@@ -455,7 +455,7 @@ const ChallengeInterface = () => {
       </div>
 
       {/* Content */}
-      <div className="p-4">
+      <div className="p-4 border-0">
         {renderContent()}
       </div>
 
