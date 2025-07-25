@@ -8,6 +8,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { Checkbox } from "@/components/ui/checkbox";
 import { Heart, Star, Plus, X, QrCode, Camera } from "lucide-react";
 import challengeHero from "@/assets/challenge-hero.jpg";
+import treeGrowthProgress from "@/assets/tree-growth-progress.jpg";
 interface Friend {
   id: string;
   name: string;
@@ -330,7 +331,7 @@ const ChallengeInterface = () => {
                   </div>
                   <div className="flex flex-col">
                     <div className="w-20 h-20 bg-gray-200 rounded-lg overflow-hidden">
-                      <img src="https://images.unsplash.com/photo-1574263867128-a3d5c1b1deae?w=80&h=80&fit=crop" alt="Tree growth" className="w-full h-full object-cover" />
+                      <img src={treeGrowthProgress} alt="Tree growth" className="w-full h-full object-cover" />
                     </div>
                     <div className="text-xs text-muted-foreground mt-1">tree_growth_progress.jpg</div>
                   </div>
