@@ -69,14 +69,14 @@ const ChallengeInterface = () => {
     id: "2",
     name: "Net-roc Dev7",
     avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop&crop=face",
-    points: 0,
+    points: 2000,
     games: 0,
     rank: 2
   }, {
     id: "3",
     name: "John Eduard",
     avatar: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=100&h=100&fit=crop&crop=face",
-    points: 0,
+    points: 1000,
     games: 0,
     rank: 3
   }, {
@@ -244,7 +244,7 @@ const ChallengeInterface = () => {
                 <Button variant="default" className="bg-primary text-primary-foreground" onClick={() => setShowInviteModal(true)}>
                   Invite
                 </Button>
-                <Button variant="outline" onClick={() => setShowQRModal(true)}>
+                <Button variant="outline" className="hover:bg-[#A42138] hover:text-white" onClick={() => setShowQRModal(true)}>
                   QR Code
                 </Button>
               </div>
