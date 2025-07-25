@@ -361,7 +361,7 @@ const ChallengeInterface = () => {
                       <Button variant="default" size="sm" className="bg-primary text-primary-foreground">
                         Message
                       </Button>
-                      <Button variant="outline" size="sm">
+                      <Button variant="outline" size="sm" className="hover:bg-[#A42138] hover:text-white">
                         Nudge
                       </Button>
                     </div>
