@@ -9,6 +9,7 @@ import { Checkbox } from "@/components/ui/checkbox";
 import { Heart, Star, Plus, X, QrCode, Camera } from "lucide-react";
 import challengeHero from "@/assets/challenge-hero.jpg";
 import treeGrowthProgress from "@/assets/tree-growth-progress.jpg";
+import julianaAvatar from "@/assets/juliana-avatar.jpg";
 interface Friend {
   id: string;
   name: string;
@@ -41,7 +42,7 @@ const ChallengeInterface = () => {
   const friends: Friend[] = [{
     id: "1",
     name: "Juliana Arla",
-    avatar: "https://images.unsplash.com/photo-1494790108755-2616b612b47c?w=100&h=100&fit=crop&crop=face",
+    avatar: julianaAvatar,
     points: 399000,
     status: "Active"
   }, {
